@@ -3,138 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jason Touma | Professional Portfolio</title>
+    <title>jt portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter for sleek geometric sans-serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- GSAP for 2026 animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
-    <!-- Redesigned Loading Animation -->
-    <div id="loader">
-        <div class="loader-container">
-            <h2 class="accent-text" style="font-size: 2rem; margin-bottom: 2rem; letter-spacing: 5px;">JASON TOUMA</h2>
-            <div class="loader-progress-bg">
-                <div id="progress-fill" class="loader-progress-fill"></div>
+    <!-- Advanced Glassmorphism Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <a href="#hero" class="logo">JT</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
             </div>
-            <div id="loader-percent" class="loader-text">0%</div>
         </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="glass-panel nav-container">
-        <ul class="nav-list">
-            <li><a href="#hero" class="nav-link">Home</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
     </nav>
 
     <main>
         <!-- Hero Section -->
-        <section id="hero">
-            <div class="section-bg"></div>
-            <div class="glass-panel reveal hero-content">
-                <h1 class="hero-title">Jason <span class="accent-text">Touma</span></h1>
-                <p class="hero-subtitle">Architecting Digital Experiences with Precision & Style</p>
-                <div class="skeuo-inset status-badge">
-                    <span style="color: var(--accent);">Available for Internships 2026</span>
+        <section id="hero" class="hero-section">
+            <div class="grain-overlay"></div>
+            <div class="hero-container">
+                <h1 class="hero-name" id="hero-title">Jason Touma</h1>
+                <p class="hero-subtitle" id="hero-subtitle">2nd-Year Computer Science Student</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary magnetic">View My Work</a>
+                    <a href="assets/resume.pdf" class="btn-secondary magnetic">Download Resume</a>
                 </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience">
-            <div class="section-bg"></div>
-            <div class="reveal section-content">
-                <h2 class="section-title">Professional <span class="accent-text">Experience</span></h2>
-                <div class="experience-grid">
-                    <div class="skeuo-card experience-item">
-                        <h3 class="accent-text">Full Stack Developer Intern</h3>
-                        <p style="color: var(--text-secondary);">TechCorp Solutions • 2024 - Present</p>
-                        <ul style="margin-top: 1rem; color: var(--text-primary); padding-left: 1.5rem;">
-                            <li>Developing premium UI components for enterprise dashboards.</li>
-                            <li>Optimizing backend performance for real-time data streaming.</li>
+        <!-- About Me Section -->
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <div class="bento-grid">
+                    <div class="bento-item bento-about glass-card" id="about-card">
+                        <h2 class="section-label">About Me</h2>
+                        <p class="about-text">
+                            I am a second-year Computer Science student at Lebanese University with a passion for problem-solving and exploring new technology trends. Beyond my foundational technical skills, I bring strong communication, multitasking, and teamwork abilities developed through 2 to 3 years of hands-on customer service experience and active involvement as a member of Scouts du Liban. Fluent in Arabic, French, and English, I thrive in collaborative environments. I am eager to apply my diverse skill set—including my recent Introduction to Cybersecurity certification from the Cisco Networking Academy —to a dynamic computer science internship.
+                        </p>
+                    </div>
+                    <div class="bento-item bento-languages glass-card" id="languages-card">
+                        <h3 class="card-title">Languages</h3>
+                        <ul class="lang-list">
+                            <li>Arabic <span class="tag">Native</span></li>
+                            <li>French <span class="tag">Fluent</span></li>
+                            <li>English <span class="tag">Fluent</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <div class="section-bg"></div>
-            <div class="reveal section-content">
-                <h2 class="section-title">Technical <span class="accent-text">Arsenal</span></h2>
-                <div class="skills-grid">
-                    <div class="skeuo-card skill-card">
-                        <h3 class="skill-title">Frontend</h3>
-                        <div class="skeuo-inset">React, Next.js, CSS3</div>
-                    </div>
-                    <div class="skeuo-card skill-card">
-                        <h3 class="skill-title">Backend</h3>
-                        <div class="skeuo-inset">Node.js, Java, Python</div>
-                    </div>
-                    <div class="skeuo-card skill-card">
-                        <h3 class="skill-title">Design</h3>
-                        <div class="skeuo-inset">Figma, UI/UX, Motion</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="section-bg"></div>
-            <div class="reveal section-content wide">
-                <h2 class="section-title">Featured <span class="accent-text">Works</span></h2>
-                <div class="projects-grid">
-                    <div class="skeuo-card project-card">
-                        <div class="project-thumbnail">
-                             <div class="project-overlay"></div>
+        <!-- Experience & Certifications -->
+        <section id="experience" class="exp-section">
+            <div class="section-container">
+                <h2 class="section-title">Experience & Certs</h2>
+                <div class="bento-grid-exp">
+                    <!-- Waiter Experience -->
+                    <div class="bento-item glass-card exp-card">
+                        <div class="card-header">
+                            <h3 class="exp-role">Waiter</h3>
+                            <span class="exp-org">Alshwar Restaurant, Dbayeh</span>
                         </div>
-                        <div class="project-details">
-                            <h3 class="accent-text">JTC UI Kit</h3>
-                            <p class="project-desc">A premium design system for high-end web apps.</p>
-                        </div>
+                        <p class="exp-desc">Customer service, order management.</p>
                     </div>
-                    <div class="skeuo-card project-card">
-                        <div class="project-thumbnail">
-                             <div style="position: absolute; inset: 0; background: linear-gradient(45deg, #111, #333); opacity: 0.5;"></div>
-                        </div>
-                        <div class="project-details">
-                            <h3 class="accent-text">Nova Search</h3>
-                            <p class="project-desc">AI-powered semantic search engine.</p>
-                        </div>
+                    <!-- Certification 1 -->
+                    <div class="bento-item glass-card cert-card">
+                        <div class="cert-icon">🛡️</div>
+                        <h3 class="cert-title">Introduction to Cybersecurity</h3>
+                        <p class="cert-org">Cisco Networking Academy</p>
+                        <span class="cert-date">March 2026</span>
+                    </div>
+                    <!-- Certification 2 -->
+                    <div class="bento-item glass-card cert-card">
+                        <div class="cert-icon">🩹</div>
+                        <h3 class="cert-title">First Aid and CPR Training</h3>
+                        <p class="cert-org">Scouts du Liban</p>
+                        <span class="cert-date">March 2024</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact">
-            <div class="section-bg"></div>
-            <div class="glass-panel reveal contact-form">
-                <h2 class="section-title">Let's <span class="accent-text">Connect</span></h2>
-                <form id="contact-form" class="contact-form">
-                    <div class="skeuo-inset">
-                        <input type="text" placeholder="Name" class="form-input">
+        <section id="contact" class="contact-section">
+            <div class="section-container">
+                <div class="glass-card contact-card">
+                    <h2 class="contact-headline">Let's build the future together.</h2>
+                    <div class="contact-info">
+                        <div class="contact-method">
+                            <span class="label">Email</span>
+                            <div class="copy-container">
+                                <span id="email-text">Jasontouma6@gmail.com</span>
+                                <button id="copy-email-btn" class="magnetic">Copy</button>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="label">Phone</span>
+                            <span>+961 81 011 214</span>
+                        </div>
                     </div>
-                    <div class="skeuo-inset">
-                        <input type="email" placeholder="Email" class="form-input">
-                    </div>
-                    <div class="skeuo-inset">
-                        <textarea placeholder="Message" rows="4" class="form-input form-textarea"></textarea>
-                    </div>
-                    <button type="submit" class="skeuo-card submit-btn">Send Message</button>
-                </form>
+                </div>
             </div>
         </section>
-
-
-
     </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Jason Touma. Built with Precision.</p>
+    </footer>
 
     <script src="js/app.js"></script>
 </body>
-</html>
+</html>
+
