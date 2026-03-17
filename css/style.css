@@ -16,17 +16,30 @@
     text-align: center;
 }
 
-.loader-name {
-    font-size: clamp(2.5rem, 8vw, 6rem);
+.loader-logo {
+    font-size: 3rem;
     font-weight: 800;
-    letter-spacing: 15px;
-    color: #FFFFFF;
-    display: flex;
-    gap: 10px;
+    color: var(--accent-champagne);
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.progress-container {
+    width: 200px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
     overflow: hidden;
 }
 
-.loader-letter {
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--accent-champagne);
+    transition: width 0.1s ease;
+}
+
+.hero-letter {
     display: inline-block;
     opacity: 0;
 }

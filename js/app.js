@@ -3,16 +3,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Initial Load Animation & Loader
 window.addEventListener('DOMContentLoaded', () => {
-    const loaderName = document.getElementById('loader-name');
-    const text = loaderName.innerText;
-    loaderName.innerHTML = text.split('').map(char => 
-        `<span class="loader-letter">${char === ' ' ? '&nbsp;' : char}</span>`
+    const heroName = document.querySelector('.hero-name');
+    const text = heroName.innerText;
+    heroName.innerHTML = text.split('').map(char => 
+        `<span class="hero-letter">${char === ' ' ? '&nbsp;' : char}</span>`
     ).join('');
 
-    const letters = document.querySelectorAll('.loader-letter');
+    const letters = document.querySelectorAll('.hero-letter');
+    const progressBar = document.getElementById('progress-bar');
     const tl = gsap.timeline();
 
-    // Random directions for each letter
+    // 1. Animate Progress Bar
+    tl.to(progressBar, { 
+        width: "100%", 
+        duration: 2, 
+        ease: "power2.inOut" 
+    });
+
+    // 2. Hide Loader
+    tl.to("#loader", { 
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.inOut",
+        onComplete: () => {
+            document.getElementById('loader').style.display = 'none';
+        }
+    });
+
+    // 3. Animate Hero Name Construction
     letters.forEach((letter, i) => {
         const xDir = (Math.random() - 0.5) * 1000;
         const yDir = (Math.random() - 0.5) * 1000;
@@ -21,22 +39,14 @@ window.addEventListener('DOMContentLoaded', () => {
         tl.fromTo(letter, 
             { x: xDir, y: yDir, rotation: rotation, opacity: 0 },
             { x: 0, y: 0, rotation: 0, opacity: 1, duration: 1.2, ease: "power4.out" },
-            i * 0.05
+            "-=0.8" // Overlap slightly with previous letter/step for speed
         );
     });
 
-    // Exit Loader
-    tl.to("#loader", { 
-        clipPath: "circle(0% at 50% 50%)", 
-        duration: 1.5, 
-        ease: "expo.inOut",
-        delay: 0.5 
-    })
-    .set("#loader", { display: "none" })
-    .from(".hero-name", { y: 100, opacity: 0, duration: 1.5, ease: "power4.out" }, "-=0.5")
-    .from(".hero-subtitle", { y: 50, opacity: 0, duration: 1, ease: "power4.out" }, "-=1")
-    .from(".hero-actions", { y: 30, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.8")
-    .from(".glass-nav", { y: -100, opacity: 0, duration: 1.2, ease: "expo.out" }, "-=1.2");
+    // 4. Reveal rest of Hero
+    tl.from(".hero-subtitle", { y: 50, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.5")
+      .from(".hero-actions", { y: 30, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.8")
+      .from(".glass-nav", { y: -100, opacity: 0, duration: 1.2, ease: "expo.out" }, "-=1.2");
 });
 
 // Scroll Driven Animations
