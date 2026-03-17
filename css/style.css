@@ -90,7 +90,7 @@ body {
     justify-content: center;
     position: relative;
     padding: 0 20px;
-    background: radial-gradient(circle at center, #2A2A2A 0%, #1A1A1A 100%);
+    background: #1A1A1A;
 }
 
 .hero-container {
@@ -265,9 +265,10 @@ body {
 }
 
 .contact-headline {
-    font-size: 2.5rem;
-    margin-bottom: 48px;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 60px;
     letter-spacing: -1px;
+    color: #FFFFFF;
 }
 
 .contact-info {
@@ -294,6 +295,12 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.cv-download-section {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #copy-email-btn {
@@ -632,95 +639,4 @@ body {
     text-decoration: underline;
 }
 
-/* Contact Section Creative Enhancements */
-.contact-section {
-    position: relative;
-    overflow: hidden;
-}
-
-.ambient-blobs {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    filter: blur(80px);
-    opacity: 0.4;
-}
-
-.blob {
-    position: absolute;
-    border-radius: 50%;
-    background: var(--accent-champagne);
-}
-
-.blob-1 {
-    width: 400px;
-    height: 400px;
-    top: -100px;
-    right: -100px;
-    background: var(--accent-walnut);
-    animation: floating 20s infinite alternate;
-}
-
-.blob-2 {
-    width: 300px;
-    height: 300px;
-    bottom: -50px;
-    left: -50px;
-    background: var(--accent-emerald);
-    animation: floating 15s infinite alternate-reverse;
-}
-
-.blob-3 {
-    width: 250px;
-    height: 250px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--accent-champagne);
-    opacity: 0.3;
-    animation: pulsing 10s infinite ease-in-out;
-}
-
-@keyframes floating {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(50px, 100px) rotate(30deg); }
-}
-
-@keyframes pulsing {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.2); }
-}
-
-.glow-card {
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
-}
-
-.card-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-                rgba(198, 167, 94, 0.15) 0%, 
-                transparent 50%);
-    pointer-events: none;
-    z-index: -1;
-}
-
-.contact-headline {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1.1;
-    margin-bottom: 40px;
-    background: linear-gradient(135deg, #FFF, var(--accent-champagne));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
