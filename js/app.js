@@ -137,5 +137,18 @@ window.addEventListener('click', (e) => {
     }
 });
 
-console.log("iOS 26 Engine Active | 3D Cards & Modal Loaded");
+// Spotlight Effect for Contact Card
+const contactCard = document.querySelector('.glow-card');
+if (contactCard) {
+    contactCard.addEventListener('mousemove', (e) => {
+        const rect = contactCard.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        
+        contactCard.style.setProperty('--mouse-x', `${x}%`);
+        contactCard.style.setProperty('--mouse-y', `${y}%`);
+    });
+}
+
+console.log("iOS 26 Engine Active | Creative Features Loaded");
 
