@@ -104,6 +104,14 @@ const modalIframe = document.getElementById('cert-iframe');
 const closeModal = document.querySelector('.close-modal');
 const fullscreenButtons = document.querySelectorAll('.btn-fullscreen');
 
+const unflipAllCards = () => {
+    document.querySelectorAll('.flip-card.is-flipped').forEach(card => {
+        card.classList.remove('is-flipped');
+        const btn = card.querySelector('.btn-flip');
+        if (btn) btn.innerText = "View Certificate";
+    });
+};
+
 fullscreenButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         const certPath = btn.getAttribute('data-cert');
@@ -117,6 +125,7 @@ closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
     modalIframe.src = '';
     document.body.style.overflow = 'auto'; // Enable scroll
+    unflipAllCards();
 });
 
 window.addEventListener('click', (e) => {
@@ -124,6 +133,7 @@ window.addEventListener('click', (e) => {
         modal.style.display = 'none';
         modalIframe.src = '';
         document.body.style.overflow = 'auto';
+        unflipAllCards();
     }
 });
 
