@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - JTC</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="admin-nav">
+        <div class="admin-nav-container">
+            <h1>My Account - JTC</h1>
+            <div>
+                <a href="index.html" class="btn btn-secondary" style="margin-right: 1rem; text-decoration: none;">Back to Home</a>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <div class="welcome-section">
+            <h2>Welcome, <span id="userName"></span>!</h2>
+            <p>Manage your account and view your information</p>
+        </div>
+
+        <div class="user-info-card">
+            <h3>Account Information</h3>
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <strong>Name:</strong>
+                    <span id="displayName"></span>
+                </div>
+                <div class="contact-info-item">
+                    <strong>Email:</strong>
+                    <span id="displayEmail"></span>
+                </div>
+                <div class="contact-info-item">
+                    <strong>Phone:</strong>
+                    <span id="displayPhone"></span>
+                </div>
+                <div class="contact-info-item">
+                    <strong>Member Since:</strong>
+                    <span id="displayDate"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="user-info-card">
+            <h3>Your Contact Submissions</h3>
+            <div id="userSubmissions" class="contacts-list">
+                <!-- User's contact submissions will be loaded here -->
+            </div>
+            <div id="noUserSubmissions" class="empty-state">
+                <p>You haven't submitted any contact forms yet.</p>
+                <a href="index.html#contact" class="btn btn-primary" style="margin-top: 1rem; text-decoration: none; display: inline-block;">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="user-dashboard.js"></script>
+</body>
+</html>

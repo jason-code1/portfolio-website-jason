@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — JTC Concepts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-flex">
+      <div class="logo-block">
+        <a href="index.html" class="brand">
+          <img src="pics/logo.svg" alt="JTC Concepts" class="site-logo">
+        </a>
+        <div class="logo-pattern" aria-hidden="true">
+          <span class="logo-line">JTC</span>
+          <span class="logo-line">JTC</span>
+          <span class="logo-line concepts">CONCEPTS</span>
+          <span class="logo-line">JTC</span>
+          <span class="logo-line">JTC</span>
+        </div>
+      </div>
+      <button class="mobile-nav-toggle" aria-label="Menu">☰</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="login.html" class="btn-outline">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container contact-page">
+    <h1 class="page-title">Start a conversation</h1>
+    <form id="contact-form" class="contact-form">
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark">Send message</button>
+      <div class="form-notification" id="form-notification"></div>
+    </form>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <div class="logo-pattern small" aria-hidden="true">
+            <span>JTC</span><span>JTC</span><span class="concepts">CONCEPTS</span><span>JTC</span><span>JTC</span>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-legal">
+          <p>© 2025 JTC Concepts</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

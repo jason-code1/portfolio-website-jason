@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JTC - Jad Touma Crafts | Handcrafted Wood Furniture & Christmas Decorations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="logo.png" alt="JTC Logo" class="logo" id="logo">
+                <h1>JTC</h1>
+                <span class="brand-subtitle">Jad Touma Crafts</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#furniture">Furniture</a></li>
+                <li><a href="#decorations">Decorations</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li id="loginNavItem"><a href="user-login.html" class="btn-nav">Login</a></li>
+                <li id="userNavItem" style="display: none;"><a href="user-dashboard.html" class="btn-nav">My Account</a></li>
+                <li id="logoutNavItem" style="display: none;"><a href="#" id="logoutLink" class="btn-nav">Logout</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Handcrafted Wood Creations</h1>
+            <p class="hero-subtitle">Beautiful furniture from Lamaika wood and exquisite Christmas decorations</p>
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <section id="furniture" class="section">
+        <div class="container">
+            <h2 class="section-title">Lamaika Wood Furniture</h2>
+            <p class="section-description">Each piece is carefully crafted from premium Lamaika wood, creating timeless furniture that brings warmth and elegance to your home.</p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span class="placeholder-icon">🪑</span>
+                        <p>Custom Furniture</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span class="placeholder-icon">🛋️</span>
+                        <p>Living Room Sets</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span class="placeholder-icon">🪵</span>
+                        <p>Unique Pieces</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="decorations" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Christmas Decorations & Creches</h2>
+            <p class="section-description">Handcrafted Christmas decorations and beautiful nativity scenes (creches) made with love and attention to detail.</p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span class="placeholder-icon">🎄</span>
+                        <p>Nativity Scenes</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span class="placeholder-icon">⭐</span>
+                        <p>Christmas Ornaments</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span class="placeholder-icon">🎁</span>
+                        <p>Holiday Decorations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About JTC</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    JTC (Jad Touma Crafts) is a family-owned woodworking business, where a father and son team combine traditional craftsmanship with modern design. We specialize in creating custom furniture from premium Lamaika wood, crafting each piece to meet your unique needs and style preferences.
+                </p>
+                <p class="about-text">
+                    Every piece we create is made with passion, attention to detail, and a commitment to quality. We believe in the beauty of natural wood and the joy of handcrafted items that can be treasured for generations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-description">Interested in a custom piece? Have questions about our work? We'd love to hear from you!</p>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone (Optional)</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 JTC - Jad Touma Crafts. All rights reserved.</p>
+            <p>Handcrafted with ❤️ by a father and son team</p>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div id="productDetailModal" class="product-detail-modal">
+        <div class="product-detail-content">
+            <button class="product-detail-close" id="closeProductDetail">&times;</button>
+            <div class="product-detail-body">
+                <div class="product-detail-image-container" id="imageContainer">
+                    <div class="zoom-controls">
+                        <button id="zoomInBtn" class="zoom-btn" title="Zoom In">+</button>
+                        <button id="zoomOutBtn" class="zoom-btn" title="Zoom Out">−</button>
+                        <button id="zoomResetBtn" class="zoom-btn" title="Reset Zoom">↺</button>
+                    </div>
+                    <div class="image-wrapper" id="imageWrapper">
+                        <img id="detailProductImage" src="" alt="Product Image" class="product-detail-image">
+                    </div>
+                </div>
+                <div class="product-detail-info">
+                    <h2 id="detailProductName"></h2>
+                    <p id="detailProductDescription" class="product-detail-description"></p>
+                    <div id="detailProductPrices" class="product-detail-prices"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

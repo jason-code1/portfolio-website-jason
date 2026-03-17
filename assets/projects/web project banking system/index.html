@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyBank - Personal Banking System</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Menu -->
+        <div id="main-menu" class="menu">
+            <div class="logo-area">
+                <i class="fas fa-university"></i>
+                <h1>PyBank</h1>
+                <p>Secure Personal Banking</p>
+            </div>
+            <div class="menu-options">
+                <button id="create-account-btn" class="btn btn-primary">
+                    <i class="fas fa-user-plus"></i> Create New Account
+                </button>
+                <button id="login-btn" class="btn btn-secondary">
+                    <i class="fas fa-sign-in-alt"></i> Access Your Account
+                </button>
+                <button id="exit-btn" class="btn btn-outline">
+                    <i class="fas fa-power-off"></i> Exit System
+                </button>
+            </div>
+        </div>
+
+        <!-- Create Account Form -->
+        <div id="create-account-form" class="menu hidden">
+            <div class="header">
+                <h2><i class="fas fa-user-plus"></i> New Account</h2>
+                <button id="back-to-main" class="back-btn"><i class="fas fa-chevron-left"></i></button>
+            </div>
+            <div class="form-content">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name">
+                </div>
+                <div class="input-group">
+                    <label for="password">System Password</label>
+                    <input type="password" id="password" placeholder="Min 6 characters">
+                </div>
+                <button id="submit-create-account" class="btn btn-primary full-width">Generate Account</button>
+                
+                <div id="account-created" class="success-box hidden">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Account Created Successfully!</p>
+                    <div class="account-number-prompt">
+                        <span>Your Account #: </span>
+                        <strong id="new-account-number"></strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" class="menu hidden">
+            <div class="header">
+                <h2><i class="fas fa-lock"></i> Secure Login</h2>
+                <button id="back-to-main-2" class="back-btn"><i class="fas fa-chevron-left"></i></button>
+            </div>
+            <div class="form-content">
+                <div class="input-group">
+                    <label for="login-acc">Account Number</label>
+                    <input type="text" id="login-acc" placeholder="e.g. 1001">
+                </div>
+                <div class="input-group">
+                    <label for="login-pwd">Password</label>
+                    <input type="password" id="login-pwd" placeholder="Enter your password">
+                </div>
+                <button id="submit-login" class="btn btn-primary full-width">Login</button>
+                <div id="login-error" class="error-message hidden">
+                    <i class="fas fa-exclamation-circle"></i> Invalid account number or password.
+                </div>
+            </div>
+        </div>
+
+        <!-- Account Dashboard -->
+        <div id="account-dashboard" class="menu hidden">
+            <div class="dashboard-header">
+                <div class="user-info">
+                    <h2>Hello, <span id="user-name"></span></h2>
+                    <p>Acc #: <span id="account-number-display"></span></p>
+                </div>
+                <button id="logout-btn" class="btn-icon"><i class="fas fa-power-off"></i></button>
+            </div>
+
+            <div class="balance-section">
+                <div class="balance-card">
+                    <label>Current Balance</label>
+                    <div class="amount">$<span id="current-balance">0.00</span></div>
+                </div>
+            </div>
+
+            <div class="actions-grid">
+                <button id="show-balance-btn" class="action-card">
+                    <i class="fas fa-wallet"></i>
+                    <span>Balance</span>
+                </button>
+                <button id="deposit-btn" class="action-card">
+                    <i class="fas fa-arrow-down-long"></i>
+                    <span>Deposit</span>
+                </button>
+                <button id="withdraw-btn" class="action-card">
+                    <i class="fas fa-arrow-up-long"></i>
+                    <span>Withdraw</span>
+                </button>
+                <button id="history-btn" class="action-card">
+                    <i class="fas fa-list-ul"></i>
+                    <span>History</span>
+                </button>
+                <button id="convert-btn" class="action-card">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>FX Convert</span>
+                </button>
+                <button id="delete-account-btn" class="action-card danger">
+                    <i class="fas fa-user-minus"></i>
+                    <span>Close</span>
+                </button>
+            </div>
+
+            <div id="message-area" class="message-area"></div>
+
+            <div id="history-container" class="history-section hidden">
+                <h3><i class="fas fa-history"></i> Transaction History</h3>
+                <div id="history-list" class="history-list"></div>
+            </div>
+
+            <div id="conversion-container" class="conversion-section hidden">
+                <h3><i class="fas fa-coins"></i> Exchange Rates</h3>
+                <div id="conversion-result" class="conversion-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="transaction-modal" class="modal-overlay hidden">
+        <div class="modal">
+            <h3 id="modal-title">Transaction</h3>
+            <div class="input-group">
+                <label>Amount ($)</label>
+                <input type="number" id="amount" placeholder="0.00" step="0.01">
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-transaction" class="btn btn-primary">Confirm</button>
+                <button id="cancel-transaction" class="btn btn-outline">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="delete-modal" class="modal-overlay hidden">
+        <div class="modal">
+            <h3>Close Account?</h3>
+            <p>Type <strong>DELETE</strong> to confirm permanent closure.</p>
+            <div class="input-group">
+                <input type="text" id="delete-confirm" placeholder="Type DELETE">
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-delete" class="btn btn-danger">Confirm Deletion</button>
+                <button id="cancel-delete" class="btn btn-outline">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="bankjs.js"></script>
+</body>
+</html>

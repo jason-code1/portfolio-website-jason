@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client dashboard · JTC Concepts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-layout">
+  <aside class="dashboard-sidebar dark">
+    <div class="sidebar-logo">
+      <div class="logo-pattern small">
+        <span>JTC</span><span>JTC</span><span class="concepts">CONCEPTS</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#" class="active">Dashboard</a></li>
+        <li><a href="#" id="client-logout">Logout</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="dashboard-main" id="client-dashboard">
+    <div class="welcome-card" id="welcome-message"></div>
+    <section class="projects-section" id="client-projects"></section>
+    <section class="messages-section" id="client-messages"></section>
+    <section class="invoice-placeholder">
+      <h3>Invoices</h3>
+      <p>No pending invoices — placeholder.</p>
+    </section>
+  </main>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

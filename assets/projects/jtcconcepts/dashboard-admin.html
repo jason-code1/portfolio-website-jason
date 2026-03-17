@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin · JTC Concepts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-layout">
+  <aside class="dashboard-sidebar dark">
+    <div class="sidebar-logo">JTC ADMIN</div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#" class="active">Overview</a></li>
+        <li><a href="#" id="admin-logout">Logout</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="dashboard-main" id="admin-dashboard">
+    <div class="stats-grid" id="admin-stats"></div>
+    <section class="admin-clients">
+      <h2>Clients</h2>
+      <div id="client-list"></div>
+    </section>
+    <section class="admin-projects">
+      <h2>Projects</h2>
+      <form id="create-project-form">
+        <input type="text" id="project-name" placeholder="Project name" required>
+        <select id="project-client" required><option value="">Select client</option></select>
+        <button type="submit" class="btn btn-dark">Create</button>
+      </form>
+      <div id="projects-list"></div>
+    </section>
+    <section class="contact-submissions">
+      <h2>Contact submissions</h2>
+      <div id="contact-submissions-list"></div>
+    </section>
+    <section class="admin-message">
+      <h2>Send message to client</h2>
+      <form id="admin-message-form">
+        <select id="msg-client" required><option value="">Select client</option></select>
+        <textarea id="msg-content" placeholder="Message" required></textarea>
+        <button type="submit" class="btn btn-dark">Send</button>
+      </form>
+    </section>
+  </main>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
