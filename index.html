@@ -8,11 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Loading Animation -->
+    <!-- Redesigned Loading Animation -->
     <div id="loader">
-        <div class="loader-content">
-            <div class="loader-circle"></div>
-            <h2 class="accent-text">JT</h2>
+        <div class="loader-container">
+            <h2 class="accent-text" style="font-size: 2rem; margin-bottom: 2rem; letter-spacing: 5px;">JASON TOUMA</h2>
+            <div class="loader-progress-bg">
+                <div id="progress-fill" class="loader-progress-fill"></div>
+            </div>
+            <div id="loader-percent" class="loader-text">0%</div>
         </div>
     </div>
 
@@ -30,6 +33,7 @@
     <main>
         <!-- Hero Section -->
         <section id="hero">
+            <div class="section-bg"></div>
             <div class="glass-panel reveal hero-content">
                 <h1 class="hero-title">Jason <span class="accent-text">Touma</span></h1>
                 <p class="hero-subtitle">Architecting Digital Experiences with Precision & Style</p>
@@ -41,6 +45,7 @@
 
         <!-- Experience Section -->
         <section id="experience">
+            <div class="section-bg"></div>
             <div class="reveal section-content">
                 <h2 class="section-title">Professional <span class="accent-text">Experience</span></h2>
                 <div class="experience-grid">
@@ -58,6 +63,7 @@
 
         <!-- Skills Section -->
         <section id="skills">
+            <div class="section-bg"></div>
             <div class="reveal section-content">
                 <h2 class="section-title">Technical <span class="accent-text">Arsenal</span></h2>
                 <div class="skills-grid">
@@ -79,6 +85,7 @@
 
         <!-- Projects Section -->
         <section id="projects">
+            <div class="section-bg"></div>
             <div class="reveal section-content wide">
                 <h2 class="section-title">Featured <span class="accent-text">Works</span></h2>
                 <div class="projects-grid">
@@ -106,6 +113,7 @@
 
         <!-- Contact Section -->
         <section id="contact">
+            <div class="section-bg"></div>
             <div class="glass-panel reveal contact-form">
                 <h2 class="section-title">Let's <span class="accent-text">Connect</span></h2>
                 <form id="contact-form" class="contact-form">
@@ -122,6 +130,7 @@
                 </form>
             </div>
         </section>
+
 
 
     </main>

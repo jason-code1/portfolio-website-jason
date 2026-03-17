@@ -1,9 +1,25 @@
 window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
-    setTimeout(() => {
-        loader.classList.add('hidden');
-    }, 1500); // Premium feel delay
+    const fill = document.getElementById('progress-fill');
+    const percent = document.getElementById('loader-percent');
+    
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 15;
+        if (progress > 100) progress = 100;
+        
+        fill.style.width = `${progress}%`;
+        percent.textContent = `${Math.floor(progress)}%`;
+        
+        if (progress === 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 600);
+        }
+    }, 150);
 });
+
 
 const observerOptions = {
     threshold: 0.25,
