@@ -1,87 +1,277 @@
 :root {
-    --bg: #0a0a0a;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --border: rgba(255, 255, 255, 0.1);
-    --accent: #C6A75E; /* Your Champagne color */
-    --text: #ffffff;
+    --bg-dark: #0F0F11;
+    --bg-card: #1C1C1E;
+    --accent: #C6A75E; /* Champagne Gold */
+    --accent-glow: rgba(198, 167, 94, 0.3);
+    --text-primary: #F5F5F7;
+    --text-secondary: #86868B;
+    --glass-bg: rgba(28, 28, 30, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    
+    /* Skeuomorphic Shadows */
+    --skeuo-out: 8px 8px 16px rgba(0, 0, 0, 0.4), -4px -4px 12px rgba(255, 255, 255, 0.02);
+    --skeuo-in: inset 6px 6px 12px rgba(0, 0, 0, 0.5), inset -2px -2px 8px rgba(255, 255, 255, 0.02);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
 
 body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
     overflow-x: hidden;
-    line-height: 1.6;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
-/* Animated Mesh Background */
-.mesh-gradient {
+/* Loader Styles */
+#loader {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at 20% 30%, #4B2E2B 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, #1a2a1a 0%, transparent 40%);
-    z-index: -1;
-    filter: blur(100px);
-    opacity: 0.5;
+    background: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease-out, visibility 1s;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 80px auto;
-    padding: 20px;
+#loader.hidden {
+    opacity: 0;
+    visibility: hidden;
 }
 
-/* Glassmorphism Card Base */
-.glass-card {
-    background: var(--card-bg);
+.loader-content {
+    text-align: center;
+}
+
+.loader-circle {
+    width: 60px;
+    height: 60px;
+    border: 3px solid var(--glass-border);
+    border-top: 3px solid var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Base Section Layout */
+section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glassmorphism Elements */
+.glass-panel {
+    background: var(--glass-bg);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
-    border: 1px solid var(--border);
-    border-radius: 32px;
-    padding: 40px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: var(--skeuo-out);
 }
 
-.glass-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+/* Skeuomorphic Elements */
+.skeuo-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    box-shadow: var(--skeuo-out);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hero Styles */
-.hero-tile {
-    text-align: center;
-    margin-bottom: 24px;
+.skeuo-inset {
+    background: #151517;
+    border-radius: 12px;
+    box-shadow: var(--skeuo-in);
+    padding: 1rem;
 }
 
-h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    letter-spacing: -2px;
-    background: linear-gradient(180deg, #fff 0%, var(--accent) 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* Typography */
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
 }
 
-/* Bento Grid Layout */
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+.accent-text {
+    color: var(--accent);
+    text-shadow: 0 0 20px var(--accent-glow);
 }
 
-.wide { grid-column: span 2; }
-
-/* Reveal Animation States */
+/* Animations */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(10px);
+    transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .reveal.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    filter: blur(0);
 }
+
+.fade-out {
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+/* Navigation Styles */
+.nav-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+/* Section Specifics */
+.section-content {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 10vw, 5rem);
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
+
+/* Grid Layouts */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+}
+
+.project-thumbnail {
+    height: 200px;
+    background: #222;
+    position: relative;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, var(--bg-card), var(--accent-glow));
+    opacity: 0.4;
+}
+
+/* Form Styles */
+.contact-form {
+    display: grid;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 0.2rem;
+}
+
+.form-textarea {
+    resize: none;
+}
+
+.submit-btn {
+    padding: 1rem;
+    color: var(--accent);
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}

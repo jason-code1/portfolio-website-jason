@@ -3,40 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JT Portfolio | Jason Touma</title>
+    <title>Jason Touma | Professional Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="mesh-gradient"></div>
+    <!-- Loading Animation -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <h2 class="accent-text">JT</h2>
+        </div>
+    </div>
 
-    <main class="container">
-        <header class="glass-card hero-tile reveal">
-            <div class="badge">2nd Year CS Student</div>
-            <h1>Jason Touma</h1>
-            <p class="subtitle">Architecting Digital Experiences</p>
-            <div class="status-dot">Available for Internships 2026</div>
-        </header>
+    <!-- Navigation -->
+    <nav class="glass-panel nav-container">
+        <ul class="nav-list">
+            <li><a href="#hero" class="nav-link">Home</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
 
-        <section class="bento-grid">
-            <div class="glass-card wide reveal">
-                <h3>JTC UI Kit</h3>
-                <p>A premium design system built with Walnut & Matte Black aesthetics.</p>
-                <div class="tag">NPM Package</div>
-            </div>
-
-            <div class="glass-card small reveal">
-                <h3>Skills</h3>
-                <p>Java • Python • JS • C++</p>
-            </div>
-
-            <div class="glass-card small reveal">
-                <h3>Contact</h3>
-                <p>Let's build something together.</p>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="glass-panel reveal hero-content">
+                <h1 class="hero-title">Jason <span class="accent-text">Touma</span></h1>
+                <p class="hero-subtitle">Architecting Digital Experiences with Precision & Style</p>
+                <div class="skeuo-inset status-badge">
+                    <span style="color: var(--accent);">Available for Internships 2026</span>
+                </div>
             </div>
         </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="reveal section-content">
+                <h2 class="section-title">Professional <span class="accent-text">Experience</span></h2>
+                <div class="experience-grid">
+                    <div class="skeuo-card experience-item">
+                        <h3 class="accent-text">Full Stack Developer Intern</h3>
+                        <p style="color: var(--text-secondary);">TechCorp Solutions • 2024 - Present</p>
+                        <ul style="margin-top: 1rem; color: var(--text-primary); padding-left: 1.5rem;">
+                            <li>Developing premium UI components for enterprise dashboards.</li>
+                            <li>Optimizing backend performance for real-time data streaming.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="reveal section-content">
+                <h2 class="section-title">Technical <span class="accent-text">Arsenal</span></h2>
+                <div class="skills-grid">
+                    <div class="skeuo-card skill-card">
+                        <h3 class="skill-title">Frontend</h3>
+                        <div class="skeuo-inset">React, Next.js, CSS3</div>
+                    </div>
+                    <div class="skeuo-card skill-card">
+                        <h3 class="skill-title">Backend</h3>
+                        <div class="skeuo-inset">Node.js, Java, Python</div>
+                    </div>
+                    <div class="skeuo-card skill-card">
+                        <h3 class="skill-title">Design</h3>
+                        <div class="skeuo-inset">Figma, UI/UX, Motion</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="reveal section-content wide">
+                <h2 class="section-title">Featured <span class="accent-text">Works</span></h2>
+                <div class="projects-grid">
+                    <div class="skeuo-card project-card">
+                        <div class="project-thumbnail">
+                             <div class="project-overlay"></div>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="accent-text">JTC UI Kit</h3>
+                            <p class="project-desc">A premium design system for high-end web apps.</p>
+                        </div>
+                    </div>
+                    <div class="skeuo-card project-card">
+                        <div class="project-thumbnail">
+                             <div style="position: absolute; inset: 0; background: linear-gradient(45deg, #111, #333); opacity: 0.5;"></div>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="accent-text">Nova Search</h3>
+                            <p class="project-desc">AI-powered semantic search engine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="glass-panel reveal contact-form">
+                <h2 class="section-title">Let's <span class="accent-text">Connect</span></h2>
+                <form id="contact-form" class="contact-form">
+                    <div class="skeuo-inset">
+                        <input type="text" placeholder="Name" class="form-input">
+                    </div>
+                    <div class="skeuo-inset">
+                        <input type="email" placeholder="Email" class="form-input">
+                    </div>
+                    <div class="skeuo-inset">
+                        <textarea placeholder="Message" rows="4" class="form-input form-textarea"></textarea>
+                    </div>
+                    <button type="submit" class="skeuo-card submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+
     </main>
 
     <script src="js/app.js"></script>
 </body>
-</html>
+</html>

@@ -1,20 +1,29 @@
-// Intersection Observer for animations
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+        loader.classList.add('hidden');
+    }, 1500); // Premium feel delay
+});
+
 const observerOptions = {
-    threshold: 0.1
+    threshold: 0.25,
+    rootMargin: "0px"
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
+        } else {
+            // Fade out when leaving view
+            entry.target.classList.remove('active');
         }
     });
 }, observerOptions);
 
-// Select all elements with the 'reveal' class
 document.querySelectorAll('.reveal').forEach((el) => {
     observer.observe(el);
 });
 
-// Extra: Console Log for debugging on your Zenbook
-console.log("JT Portfolio Loaded Successfully | 2026");
+// Smooth scroll for nav if needed later
+// console.log("Professional Portfolio Engine Online | 2026");
