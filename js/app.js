@@ -82,5 +82,50 @@ if (copyBtn) {
     });
 }
 
-console.log("iOS 26 Engine Active | Jason Touma Portfolio");
+// 3D Card Flip Logic
+const flipButtons = document.querySelectorAll('.btn-flip');
+flipButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const card = btn.closest('.flip-card');
+        card.classList.toggle('is-flipped');
+        
+        // Change button text based on state
+        if (card.classList.contains('is-flipped')) {
+            btn.innerText = "View Details";
+        } else {
+            btn.innerText = "View Certificate";
+        }
+    });
+});
+
+// Fullscreen Modal Logic
+const modal = document.getElementById('cert-modal');
+const modalIframe = document.getElementById('cert-iframe');
+const closeModal = document.querySelector('.close-modal');
+const fullscreenButtons = document.querySelectorAll('.btn-fullscreen');
+
+fullscreenButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const certPath = btn.getAttribute('data-cert');
+        modalIframe.src = certPath;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Disable scroll
+    });
+});
+
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalIframe.src = '';
+    document.body.style.overflow = 'auto'; // Enable scroll
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+        modalIframe.src = '';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+console.log("iOS 26 Engine Active | 3D Cards & Modal Loaded");
 
