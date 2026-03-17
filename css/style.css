@@ -180,6 +180,7 @@ body {
 
 .glass-card:hover {
     border-color: rgba(198, 167, 94, 0.4);
+    box-shadow: 0 0 30px rgba(198, 167, 94, 0.15), var(--skeuo-out);
 }
 
 .section-label {
@@ -375,7 +376,7 @@ body {
     background: transparent;
     perspective: 1000px;
     height: auto;
-    min-height: 250px;
+    min-height: 320px;
     padding: 0 !important;
     border: none !important;
 }
@@ -442,6 +443,12 @@ body {
     margin-top: 15px;
     font-size: 0.9rem;
     color: var(--accent-champagne);
+}
+
+.scout-logo {
+    width: 60px;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
 }
 
 /* Modal */
