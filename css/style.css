@@ -39,10 +39,7 @@
     transition: width 0.1s ease;
 }
 
-.hero-letter {
-    display: inline-block;
-    opacity: 0;
-}
+/* Hero Name Letters - Handled by JS */
 
 :root {
     --bg-dark: #1A1A1A; /* Matte Black */
@@ -144,15 +141,20 @@ body {
     z-index: 2;
 }
 
+.hero-letter {
+    display: inline-block;
+    opacity: 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #A1A1A1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .hero-name {
     font-size: clamp(3rem, 10vw, 6rem);
     font-weight: 800;
     letter-spacing: -3px;
     margin-bottom: 10px;
-    background: linear-gradient(180deg, #FFFFFF 0%, #A1A1A1 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {

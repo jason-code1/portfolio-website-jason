@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const heroName = document.querySelector('.hero-name');
     if (!heroName) return;
 
-    const text = heroName.innerText;
+    const text = "Jason Touma"; // Explicitly set to avoid any innerHTML issues
     heroName.innerHTML = text.split('').map(char => 
         `<span class="hero-letter">${char === ' ' ? '&nbsp;' : char}</span>`
     ).join('');
